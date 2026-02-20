@@ -10,24 +10,14 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/payment/(.*)",
-      "dest": "api/payment.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Authorization, Content-Type, X-Requested-With"
-      }
+      "source": "/api/payment/(.*)",
+      "destination": "/api/payment.js"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "api/main.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Authorization, Content-Type, X-Requested-With"
-      }
+      "source": "/api/(.*)",
+      "destination": "/api/main.js"
     }
   ],
   "headers": [
